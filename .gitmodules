@@ -10,3 +10,6 @@
 [submodule "vsp-auth-service"]
 	path = vsp-auth-service
 	url = https://github.com/mzilin/vsp-auth-service.git
+[submodule "vsp-user-service"]
+	path = vsp-user-service
+	url = https://github.com/mzilin/vsp-user-service.git
