@@ -1,0 +1,3 @@
+[submodule "vsp-eureka-server"]
+	path = vsp-eureka-server
+	url = https://github.com/mzilin/vsp-eureka-server.git
