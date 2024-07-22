@@ -16,3 +16,6 @@
 [submodule "vsp-email-service"]
 	path = vsp-email-service
 	url = https://github.com/mzilin/vsp-email-service.git
+[submodule "vsp-user-profile-service"]
+	path = vsp-user-profile-service
+	url = https://github.com/mzilin/vsp-user-profile-service.git
