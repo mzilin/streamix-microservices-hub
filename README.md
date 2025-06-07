@@ -419,7 +419,7 @@ Manages customer support, including ticketing and helpdesk integrations.
 
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB&style=flat)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=white)
-![Eureka](https://img.shields.io/badge/Eureka-2C6EBE?logo=spring&logoColor=white)
+![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-6DB33F?logo=spring&logoColor=white)
 ![Apache Kafka](https://img.shields.io/badge/Kafka-231F20?logo=apachekafka&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?logo=rabbitmq&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
@@ -430,8 +430,8 @@ Manages customer support, including ticketing and helpdesk integrations.
 ![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=white)
 ![BigQuery](https://img.shields.io/badge/BigQuery-3367D6?logo=googlebigquery&logoColor=white)
 ![Amazon CloudFront](https://img.shields.io/badge/AWS%20CloudFront-232F3E?logo=amazonwebservices&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 
 
 ### Frontend
