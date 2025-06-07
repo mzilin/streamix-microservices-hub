@@ -94,8 +94,8 @@ User-facing applications delivering the video streaming experience across web, m
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Web App</td>
@@ -105,12 +105,12 @@ User-facing applications delivering the video streaming experience across web, m
   <tr style="vertical-align: top;">
     <td>Mobile App</td>
     <td>Delivers the platform experience to iOS and Android users, including video playback, offline support and push notifications.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>TV App</td>
     <td>Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -122,8 +122,8 @@ Essential infrastructure services, including configuration management, service d
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 55%;">Description</th>
-    <th style="width: 20%; min-width: 140px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Config Server</td>
@@ -160,8 +160,8 @@ Manages user authentication, session control and third-party login integrations.
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Identity Service</td>
@@ -176,7 +176,7 @@ Manages user authentication, session control and third-party login integrations.
   <tr style="vertical-align: top;">
     <td>OAuth2 Service</td>
     <td>Supports third-party login integrations, managing linked identities.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -188,8 +188,8 @@ Handles user-related data such as account details, profiles, watchlists and devi
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Account</td>
@@ -209,7 +209,7 @@ Handles user-related data such as account details, profiles, watchlists and devi
     <tr style="vertical-align: top;">
     <td>Devices</td>
     <td>Tracks registered user devices and session history (e.g. IP, location, timestamps).</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -221,8 +221,8 @@ Manages media content, including uploads, transcoding, DRM and licensing.
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Catalog</td>
@@ -242,27 +242,27 @@ Manages media content, including uploads, transcoding, DRM and licensing.
   <tr style="vertical-align: top;">
     <td>DRM (Digital Rights Management)</td>
     <td>Protects content with encryption and controls playback rights.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Geo-Restrictions Manager</td>
     <td>Restricts content availability based on geographic location.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Content Moderation</td>
     <td>Ensures uploaded content meets community and legal standards.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Release Scheduler</td>
     <td>Controls when content is published and for how long it's available.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Licensing Service</td>
     <td>Manages content licensing agreements and rights.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -274,8 +274,8 @@ Delivers streaming services, including content delivery, playback management and
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Delivery</td>
@@ -290,7 +290,7 @@ Delivers streaming services, including content delivery, playback management and
   <tr style="vertical-align: top;">
     <td>Rights Manager</td>
     <td>Validates user permissions for content based on subscriptions, geo and device.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Watch History</td>
@@ -300,22 +300,22 @@ Delivers streaming services, including content delivery, playback management and
   <tr style="vertical-align: top;">
     <td>CDN Orchestrator</td>
     <td>Selects the best CDN edge node for each user, integrating with Open Connect.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Live</td>
     <td>Handles live streaming events and real-time playback.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Ad Inserter</td>
     <td>Injects or signals ad content into live or on-demand streams.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Offline Manager</td>
     <td>Manages downloads, licenses and expiry for offline viewing.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -327,8 +327,8 @@ Provides search and discovery features, including search indexing, autocomplete 
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Search</td>
@@ -365,8 +365,8 @@ Drives user interaction with recommendations, trending content, A/B testing and 
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Recommender</td>
@@ -381,12 +381,12 @@ Drives user interaction with recommendations, trending content, A/B testing and 
   <tr style="vertical-align: top;">
     <td>A/B Testing</td>
     <td>Runs experiments to test new features and content layouts.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Ads</td>
     <td>Manages ad campaigns, targeting, scheduling and selection for live streams.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -398,8 +398,8 @@ Manages user communication via email, push notifications, in-app messages and us
 <table style="width: 100%">
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Notification Orchestrator</td>
@@ -414,7 +414,7 @@ Manages user communication via email, push notifications, in-app messages and us
   <tr style="vertical-align: top;">
     <td>Push (Apps)</td>
     <td>Sends push notifications to mobile devices.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>In-App (Websockets)</td>
@@ -424,17 +424,17 @@ Manages user communication via email, push notifications, in-app messages and us
   <tr style="vertical-align: top;">
     <td>SMS</td>
     <td>Sends text messages via telecom providers.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Templates</td>
     <td>Manages message templates for consistent formatting.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Preferences</td>
     <td>Handles user communication preferences and settings.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -446,8 +446,8 @@ Handles payments, subscriptions, refunds and financial reconciliation.
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Payments</td>
@@ -457,7 +457,7 @@ Handles payments, subscriptions, refunds and financial reconciliation.
   <tr style="vertical-align: top;">
     <td>Invoicing</td>
     <td>Generates and stores user invoices.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Subscriptions</td>
@@ -467,17 +467,17 @@ Handles payments, subscriptions, refunds and financial reconciliation.
   <tr style="vertical-align: top;">
     <td>Refunds</td>
     <td>Processes user refund requests and tracks their status.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Disputes</td>
     <td>Handles chargebacks and interactions with payment providers.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Reconciliation</td>
     <td>Compares internal records with provider statements to identify mismatches.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -489,8 +489,8 @@ Enables platform insights by collecting, analysing, and reporting data on conten
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Event Collector</td>
@@ -500,7 +500,7 @@ Enables platform insights by collecting, analysing, and reporting data on conten
   <tr style="vertical-align: top;">
     <td>Reporting</td>
     <td>Generates dashboards and usage statistics.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Content Performance</td>
@@ -510,22 +510,22 @@ Enables platform insights by collecting, analysing, and reporting data on conten
   <tr style="vertical-align: top;">
     <td>User Behaviour</td>
     <td>Stores behaviour data for analysis and machine learning.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Anomaly Detector</td>
     <td>Detects spikes, drops or odd patterns in metrics in real-time.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Data Quality Validator</td>
     <td>Monitors pipelines for broken schemas and missing data.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
   <tr style="vertical-align: top;">
     <td>Ad Metrics</td>
     <td>Tracks ad impressions, durations, aggregates revenue/performance data.</td>
-    <td>Concept Only</td>
+    <td><code>Concept Only</code></td>
   </tr>
 </table>
 
@@ -537,8 +537,8 @@ Manages customer support, including ticketing and helpdesk integrations.
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
-    <th style="width: 60%;">Description</th>
-    <th style="width: 15%; min-width: 160px">Repository / Status</th>
+    <th style="width: 50%;">Description</th>
+    <th style="width: 25%;">Repository / Status</th>
   </tr>
   <tr style="vertical-align: top;">
     <td>Ticketing</td>
