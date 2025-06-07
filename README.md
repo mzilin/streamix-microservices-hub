@@ -16,8 +16,9 @@ It provides an overview of the system architecture and links to all individual m
 
 * [Introduction](#introduction)
 * [High-Level Architecture](#high-level-architecture)
-* [Microservices Breakdown](#microservices-breakdown)
-  * [Frontend Apps](#frontend-apps)
+* [Implemented Services](#implemented-services)
+* [Platform Services Overview](#platform-services-overview)
+  * [Frontend Applications](#frontend-applications)
   * [Infrastructure Cluster](#infrastructure-cluster)
   * [Auth Cluster](#auth-cluster)
   * [Users Cluster](#users-cluster)
@@ -72,9 +73,44 @@ Microservices are organised into logical clusters based on their core responsibi
 Centralised configuration management is provided via **Spring Cloud Config**, enabling consistent, environment-specific configuration across all microservices. **Eureka** acts as the service registry, supporting dynamic service discovery and load balancing.
 
 
-## Microservices Breakdown
+### Implemented Services
 
-This section outlines the core components of **VSP**, their current development statuses, and links to individual repositories where applicable.
+The following services are currently implemented and actively maintained. They are also listed in the [Platform Services Overview](#platform-services-overview) section below, where each service is grouped under its relevant cluster for more detailed context:
+
+- **Config Server** → [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)  
+  Manages externalised configuration using Spring Cloud Config.
+
+- **Discovery Service** → [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery)  
+  Provides service registration and discovery with Eureka.
+
+- **API Gateway** → [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway)  
+  Routes external requests to backend services, managing authentication, rate limiting, and aggregation.
+
+- **Identity Service** → [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity)  
+  Handles user authentication and credential management.
+
+- **Session Service** → [vsp-auth-session](https://github.com/mzilin/vsp-auth-session)  
+  Manages access and refresh tokens, including validation and rotation.
+
+- **Account Service** → [vsp-users-account](https://github.com/mzilin/vsp-users-account)  
+  Stores and manages user account details.
+
+- **Profile Service** → [vsp-users-profile](https://github.com/mzilin/vsp-users-profile)  
+  Manages user preferences and personalisation.
+
+- **Catalog Service** → [vsp-media-catalog](https://github.com/mzilin/vsp-media-catalog)  
+  Stores metadata for media content, including titles and cast.
+
+- **Search Service** → [vsp-discovery-search](https://github.com/mzilin/vsp-discovery-search)  
+  Provides full-text and filtered search across media.
+
+- **Email Service** → [vsp-comms-email](https://github.com/mzilin/vsp-comms-email)  
+  Sends transactional and marketing emails.
+
+
+## Platform Services Overview
+
+This section outlines all core components of **Video Streaming Platform**, including their current development statuses, descriptions and links to individual repositories.
 
 Services are labelled with one of the following statuses:
 
@@ -83,7 +119,7 @@ Services are labelled with one of the following statuses:
 - `Concept Only`: Service is a conceptual idea that may be explored in the future.
 
 
-### Frontend Apps
+### Frontend Applications
 
 User-facing applications delivering the video streaming experience across web, mobile and smart TVs.
 
