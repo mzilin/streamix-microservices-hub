@@ -16,22 +16,19 @@ It provides an overview of the system architecture and links to all individual m
 
 * [Introduction](#introduction)
 * [High-Level Architecture](#high-level-architecture)
-* [Microservices](#microservices)
-  * [Statuses](#statuses)
+* [Microservices Breakdown](#microservices-breakdown)
   * [Frontend Apps](#frontend-apps)
-  * [Infrastructure Services](#infrastructure-services)
-  * [Core Backend Services](#core-backend-services)
-    * [Auth Cluster](#auth-cluster)
-    * [Users Cluster](#users-cluster)
-    * [Media Cluster](#media-cluster)
-    * [Streaming Cluster](#streaming-cluster)
-    * [Discovery Cluster](#discovery-cluster)
-  * [Supporting Backend Services](#supporting-backend-services)
-    * [Engagement Cluster](#engagement-cluster)
-    * [Comms Cluster](#comms-cluster)
-    * [Billing Cluster](#billing-cluster)
-    * [Analytics Cluster](#analytics-cluster)
-    * [Support Cluster](#support-cluster)
+  * [Infrastructure Cluster](#infrastructure-cluster)
+  * [Auth Cluster](#auth-cluster)
+  * [Users Cluster](#users-cluster)
+  * [Media Cluster](#media-cluster)
+  * [Streaming Cluster](#streaming-cluster)
+  * [Discovery Cluster](#discovery-cluster)
+  * [Engagement Cluster](#engagement-cluster)
+  * [Comms Cluster](#comms-cluster)
+  * [Billing Cluster](#billing-cluster)
+  * [Analytics Cluster](#analytics-cluster)
+  * [Support Cluster](#support-cluster)
 * [Technology Stack](#technology-stack)
   * [Frontend](#frontend)
   * [Backend](#backend)
@@ -75,12 +72,11 @@ Microservices are organised into logical clusters based on their core responsibi
 Centralised configuration management is provided via **Spring Cloud Config**, enabling consistent, environment-specific configuration across all microservices. **Eureka** acts as the service registry, supporting dynamic service discovery and load balancing.
 
 
-## Microservices
+## Microservices Breakdown
 
 This section outlines the core components of **VSP**, their current development statuses, and links to individual repositories where applicable.
 
-
-### Statuses
+Services are labelled with one of the following statuses:
 
 - `Planned`: Service is scheduled for future development.
 - `Pending`: Service is under consideration but not yet prioritised.
@@ -104,7 +100,7 @@ User-facing applications delivering the video streaming experience across web, m
     Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls.
 
 
-### Infrastructure Services
+### Infrastructure Cluster
 
 Core infrastructure components that support all other services, including configuration management, service discovery and API routing.
 
@@ -125,12 +121,7 @@ Core infrastructure components that support all other services, including config
     Injects faults and simulates failures in services using Spring Cloud Chaos Monkey, helping to test the platform's resilience and fault tolerance.
 
 
-### Core Backend Services
-
-The backend microservices that power the platform, grouped by functional cluster for easy navigation.
-
-
-#### Auth Cluster
+### Auth Cluster
 
 Manages user authentication, session management and third-party login integrations.
 
@@ -147,7 +138,7 @@ Manages user authentication, session management and third-party login integratio
     Supports third-party login integrations, managing linked identities.
 
 
-#### Users Cluster
+### Users Cluster
 
 Handles user-related data such as account details, profiles, watchlists and device management.
 
@@ -168,7 +159,7 @@ Handles user-related data such as account details, profiles, watchlists and devi
     Tracks registered user devices and session history (e.g. IP, location, timestamps).
 
 
-#### Media Cluster
+### Media Cluster
 
 Manages all aspects of media management, including uploads, transcoding, DRM and licensing.
 
@@ -205,7 +196,7 @@ Manages all aspects of media management, including uploads, transcoding, DRM and
     Tracks and manages content licensing agreements and rights management.
 
 
-#### Streaming Cluster
+### Streaming Cluster
 
 Delivers streaming services, including content delivery, playback management and CDN integration.
 
@@ -242,7 +233,7 @@ Delivers streaming services, including content delivery, playback management and
     Manages downloads, licenses and expiry for offline viewing.
 
 
-#### Discovery Cluster
+### Discovery Cluster
 
 Provides search and discovery features, including search indexing, autocomplete and homepage content curation.
 
@@ -263,12 +254,7 @@ Provides search and discovery features, including search indexing, autocomplete 
     Keeps Elasticsearch in sync with the media catalogue to ensure fast and accurate search results.
 
 
-### Supporting Backend Services
-
-Provides key platform enhancements such as user engagement, recommendations, communication, billing, analytics and support.
-
-
-#### Engagement Cluster
+### Engagement Cluster
 
 Drives user interaction with recommendations, trending content, A/B testing and advertising.
 
@@ -289,7 +275,7 @@ Drives user interaction with recommendations, trending content, A/B testing and 
     Manages ad campaigns, targeting, scheduling and selection for live streams.
 
 
-#### Comms Cluster
+### Comms Cluster
 
 Manages user communication via email, push notifications, in-app messaging and user preferences.
 
@@ -322,7 +308,7 @@ Manages user communication via email, push notifications, in-app messaging and u
     Handles user preferences for communication channels and notification settings.
 
 
-#### Billing Cluster
+### Billing Cluster
 
 Handles payments, subscriptions, refunds and financial reconciliation.
 
@@ -351,7 +337,7 @@ Handles payments, subscriptions, refunds and financial reconciliation.
     Compares internal records with provider statements to identify mismatches.
 
 
-#### Analytics Cluster
+### Analytics Cluster
 
 Enables platform insights by collecting, analysing, and reporting data on content and user behaviour.
 
@@ -384,7 +370,7 @@ Enables platform insights by collecting, analysing, and reporting data on conten
     Tracks ad impressions, durations and aggregates revenue/performance data.
 
 
-#### Support Cluster
+### Support Cluster
 
 Manages customer support, including ticketing and helpdesk integrations.
 
