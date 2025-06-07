@@ -65,7 +65,7 @@ The platform is built on a modern, cloud-native architecture that divides key pl
 The high-level architecture diagram below illustrates how frontend clients interact with the platform's core infrastructure and service clusters. Each cluster contains independent microservices with their own dedicated databases, ensuring data consistency and service autonomy.
 
 <p align="center">
-  <img src="docs/diagrams/architecture-diagram.png" alt="VSP High-Level Architecture" style="max-width: 800px; width: 100%; height: auto;"/>
+  <img src="diagrams/architecture-diagram.png" alt="VSP High-Level Architecture" style="max-width: 800px; width: 100%; height: auto;"/>
 </p>
 
 At the heart of the architecture is the **API Gateway**, which serves as the single entry point for all client requests. It provides routing, authentication, rate-limiting and request aggregation, simplifying client interactions while abstracting the complexity of the underlying microservices.
