@@ -82,32 +82,47 @@ This section outlines the core components of **VSP**, their current development 
 
 ### Statuses
 
-- **Planned**: Service is scheduled for future development.
-- **Pending**: Service is under consideration but not yet prioritised.
-- **Concept Only**: Service is a conceptual idea that may be explored in the future.
+- `Planned`: Service is scheduled for future development.
+- `Pending`: Service is under consideration but not yet prioritised.
+- `ConceptOnly`: Service is a conceptual idea that may be explored in the future.
 
 
 ### Frontend Apps
 
 User-facing applications delivering the video streaming experience across web, mobile and smart TVs.
 
-| Service Name | Description | Repository / Status |
-|--------------|-------------|---------------------|
-| Web App      | Provides the main user interface for desktop and laptop users, supporting media browsing, playback, and account management. | `Planned` |
-| Mobile App   | Delivers the platform experience to iOS and Android users, including video playback, offline support, and push notifications. | `Concept Only` |
-| TV App       | Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls. | `Concept Only` |
+- **Web App** - `Planned`
+
+    Provides the main user interface for desktop and laptop users, supporting media browsing, playback, and account management.
+
+- **Mobile App** - `ConceptOnly`
+
+    Delivers the platform experience to iOS and Android users, including video playback, offline support, and push notifications.
+
+- **Smart TV App** - `ConceptOnly`
+
+    Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls.
 
 
 ### Infrastructure Services
 
-Essential infrastructure services, including configuration management, service discovery and API routing.
+Core infrastructure components that support all other services, including configuration management, service discovery and API routing.
 
-| Service Name | Description | Repository / Status |
-|--------------|-------------|---------------------|
-| Config Server | Manages externalised configuration for all services using Spring Cloud Config, enabling dynamic configuration updates and environment-specific settings. | [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)   |
-| Discovery Service | Provides dynamic service registration and discovery using Spring Cloud Netflix Eureka, enabling microservices to locate and communicate with each other seamlessly. | [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery) |
-| API Gateway | Routes external client requests to the appropriate microservices using Spring Cloud Gateway, handling authentication, rate limiting, and request aggregation. | [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway) |
-| Chaos Monkey | Injects faults and simulates failures in services using Spring Cloud Chaos Monkey, helping to test the platform's resilience and fault tolerance. | `Pending`                                                        |
+- **Config Server** - [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)
+    
+    Manages externalised configuration for all services using Spring Cloud Config, enabling dynamic configuration updates and environment-specific settings.
+
+- **Discovery Service** - [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery)
+
+    Provides dynamic service registration and discovery using Spring Cloud Netflix Eureka, allowing microservices to locate and communicate with each other seamlessly.
+
+- **API Gateway** - [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway)
+
+    Routes external client requests to the appropriate microservices using Spring Cloud Gateway, handling authentication, rate limiting and request aggregation.
+
+- **Chaos Monkey** - `Pending`
+
+    Injects faults and simulates failures in services using Spring Cloud Chaos Monkey, helping to test the platform's resilience and fault tolerance.
 
 
 ### Core Backend Services
@@ -119,11 +134,17 @@ The backend microservices that power the platform, grouped by functional cluster
 
 Manages user authentication, session control and third-party login integrations.
 
-| Service Name | Description | Repository / Status |
-|--------------|-------------|---------------------|
-| Identity Service | Handles user authentication, storing and verifying credentials securely. | [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity) |
-| Session Service  | Controls access and refresh tokens, including validation, rotation and token blacklisting. | [vsp-auth-session](https://github.com/mzilin/vsp-auth-session) |
-| OAuth2 Service   | Supports third-party login integrations, managing linked identities. | `Concept Only` |
+- **Identity Service** - [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity)
+
+    Handles user authentication, storing and verifying credentials securely.
+
+- **Session Service** - [vsp-auth-session](https://github.com/mzilin/vsp-auth-session)
+
+    Controls access and refresh tokens, including validation, rotation and token blacklisting.
+
+- **OAuth2 Service** - `ConceptOnly`
+
+    Supports third-party login integrations, managing linked identities.
 
 
 #### Users Cluster
@@ -135,7 +156,7 @@ Handles user-related data such as account details, profiles, watchlists and devi
 | Account | Stores and manages core user account information. | [vsp-users-account](https://github.com/mzilin/vsp-users-account) |
 | Profile | Manages user profiles, preferences and personalisation settings. | [vsp-users-profile](https://github.com/mzilin/vsp-users-profile) |
 | Watchlist | Allows users to save and manage a list of shows and films to watch later. | `Pending` |
-| Devices | Tracks registered user devices and session history (e.g. IP, location, timestamps). | `Concept Only` |
+| Devices | Tracks registered user devices and session history (e.g. IP, location, timestamps). | `ConceptOnly` |
 
 
 #### Media Cluster
@@ -147,11 +168,11 @@ Manages media content, including uploads, transcoding, DRM and licensing.
 | Catalog | Stores metadata for all media, including titles, genres, trailers, and cast details. | [vsp-media-catalog](https://github.com/mzilin/vsp-media-catalog) |
 | Upload | Handles media uploads to S3 for further processing and storage. | `Planned` |
 | Transcoder | Converts media into different formats for streaming. | `Planned` |
-| DRM (Digital Rights Management) | Protects content with encryption and controls playback rights. | `Concept Only` |
-| Geo-Restrictions Manager | Restricts content availability based on geographic location. | `Concept Only` |
-| Content Moderation | Ensures uploaded content meets community and legal standards. | `Concept Only` |
-| Release Scheduler | Controls when content is published and for how long it's available. | `Concept Only` |
-| Licensing Service | Manages content licensing agreements and rights. | `Concept Only` |
+| DRM (Digital Rights Management) | Protects content with encryption and controls playback rights. | `ConceptOnly` |
+| Geo-Restrictions Manager | Restricts content availability based on geographic location. | `ConceptOnly` |
+| Content Moderation | Ensures uploaded content meets community and legal standards. | `ConceptOnly` |
+| Release Scheduler | Controls when content is published and for how long it's available. | `ConceptOnly` |
+| Licensing Service | Manages content licensing agreements and rights. | `ConceptOnly` |
 
 
 #### Streaming Cluster
@@ -162,12 +183,12 @@ Delivers streaming services, including content delivery, playback management and
 |--------------|-------------|---------------------|
 | Delivery | Streams content to users using a CDN for high performance and scale. | `Planned` |
 | Playback Context | Builds real-time playback sessions, including entitlements and resume data. | `Planned` |
-| Rights Manager | Validates user permissions for content based on subscriptions, geo, and device. | `Concept Only` |
+| Rights Manager | Validates user permissions for content based on subscriptions, geo, and device. | `ConceptOnly` |
 | Watch History | Stores user watch history, timestamps, and resume points. | `Planned` |
-| CDN Orchestrator | Selects the best CDN edge node for each user, integrating with Open Connect. | `Concept Only` |
-| Live | Handles live streaming events and real-time playback. | `Concept Only` |
-| Ad Inserter | Injects or signals ad content into live or on-demand streams. | `Concept Only` |
-| Offline Manager | Manages downloads, licenses, and expiry for offline viewing. | `Concept Only` |
+| CDN Orchestrator | Selects the best CDN edge node for each user, integrating with Open Connect. | `ConceptOnly` |
+| Live | Handles live streaming events and real-time playback. | `ConceptOnly` |
+| Ad Inserter | Injects or signals ad content into live or on-demand streams. | `ConceptOnly` |
+| Offline Manager | Manages downloads, licenses, and expiry for offline viewing. | `ConceptOnly` |
 
 
 #### Discovery Cluster
@@ -195,8 +216,8 @@ Drives user interaction with recommendations, trending content, A/B testing and 
 |--------------|-------------|---------------------|
 | Recommender | Uses machine learning to suggest content based on user behaviour and history. | `Pending` |
 | Trending | Identifies and displays currently popular shows and films. | `Pending` |
-| A/B Testing | Runs experiments to test new features and content layouts. | `Concept Only` |
-| Ads | Manages ad campaigns, targeting, scheduling, and selection for live streams. | `Concept Only` |
+| A/B Testing | Runs experiments to test new features and content layouts. | `ConceptOnly` |
+| Ads | Manages ad campaigns, targeting, scheduling, and selection for live streams. | `ConceptOnly` |
 
 
 #### Comms Cluster
@@ -207,11 +228,11 @@ Manages user communication via email, push notifications, in-app messages and us
 |--------------|-------------|---------------------|
 | Notification Orchestrator  | Routes and schedules messages across multiple channels. | `Pending` |
 | Email | Sends transactional and marketing emails. | [vsp-comms-email](https://github.com/mzilin/vsp-comms-email) |
-| Push (Apps) | Sends push notifications to mobile devices. | `Concept Only` |
+| Push (Apps) | Sends push notifications to mobile devices. | `ConceptOnly` |
 | In-App (Websockets) | Delivers real-time messages within web and mobile apps via WebSockets. | `Planned` |
-| SMS | Sends text messages via telecom providers. | `Concept Only` |
-| Templates | Manages message templates for consistent formatting. | `Concept Only` |
-| Preferences | Handles user communication preferences and settings. | `Concept Only` |
+| SMS | Sends text messages via telecom providers. | `ConceptOnly` |
+| Templates | Manages message templates for consistent formatting. | `ConceptOnly` |
+| Preferences | Handles user communication preferences and settings. | `ConceptOnly` |
 
 
 #### Billing Cluster
@@ -221,11 +242,11 @@ Handles payments, subscriptions, refunds and financial reconciliation.
 | Service Name | Description | Repository / Status |
 |--------------|-------------|---------------------|
 | Payments | Processes payments using Stripe/Checkout/etc. | `Pending` |
-| Invoicing | Generates and stores user invoices. | `Concept Only` |
+| Invoicing | Generates and stores user invoices. | `ConceptOnly` |
 | Subscriptions | Manages plans, renewals, and subscription statuses. | `Pending` |
-| Refunds | Processes user refund requests and tracks their status. | `Concept Only` |
-| Disputes | Handles chargebacks and interactions with payment providers. | `Concept Only` |
-| Reconciliation | Compares internal records with provider statements to identify mismatches. | `Concept Only` |
+| Refunds | Processes user refund requests and tracks their status. | `ConceptOnly` |
+| Disputes | Handles chargebacks and interactions with payment providers. | `ConceptOnly` |
+| Reconciliation | Compares internal records with provider statements to identify mismatches. | `ConceptOnly` |
 
 
 #### Analytics Cluster
@@ -234,13 +255,13 @@ Enables platform insights by collecting, analysing, and reporting data on conten
 
 | Service Name | Description | Repository / Status |
 |--------------|-------------|---------------------|
-| Event Collector | Ingests and batches user and system events. | `Concept Only` |
-| Reporting | Generates dashboards and usage statistics. | `Concept Only` |
-| Content Performance | Tracks views, engagement, and popularity of titles. | `Concept Only` |
-| User Behaviour | Stores behaviour data for analysis and machine learning. | `Concept Only` |
-| Anomaly Detector | Detects spikes, drops, or odd patterns in metrics in real-time. | `Concept Only` |
-| Data Quality Validator | Monitors pipelines for broken schemas and missing data. | `Concept Only` |
-| Ad Metrics | Tracks ad impressions, durations, and aggregates revenue/performance data. | `Concept Only` |
+| Event Collector | Ingests and batches user and system events. | `ConceptOnly` |
+| Reporting | Generates dashboards and usage statistics. | `ConceptOnly` |
+| Content Performance | Tracks views, engagement, and popularity of titles. | `ConceptOnly` |
+| User Behaviour | Stores behaviour data for analysis and machine learning. | `ConceptOnly` |
+| Anomaly Detector | Detects spikes, drops, or odd patterns in metrics in real-time. | `ConceptOnly` |
+| Data Quality Validator | Monitors pipelines for broken schemas and missing data. | `ConceptOnly` |
+| Ad Metrics | Tracks ad impressions, durations, and aggregates revenue/performance data. | `ConceptOnly` |
 
 
 #### Support Cluster
@@ -249,7 +270,7 @@ Manages customer support, including ticketing and helpdesk integrations.
 
 | Service Name | Description | Repository / Status |
 |--------------|-------------|---------------------|
-| Ticketing | Handles customer support tickets and related workflows. | `Concept Only`|
+| Ticketing | Handles customer support tickets and related workflows. | `ConceptOnly`|
 
 
 ## Technology Stack
