@@ -185,6 +185,14 @@ Manages user authentication, session control and third-party login integrations.
 
 Handles user-related data such as account details, profiles, watchlists and device management.
 
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Account | Stores and manages core user account information. | [vsp-users-account](https://github.com/mzilin/vsp-users-account) |
+| Profile | Manages user profiles, preferences and personalisation settings. | [vsp-users-profile](https://github.com/mzilin/vsp-users-profile) |
+| Watchlist | Allows users to save and manage a list of shows and films to watch later. | `Pending` |
+| Devices | Tracks registered user devices and session history (e.g. IP, location, timestamps). | `Concept Only` |
+
+
 <table style="width: 100%" >
   <tr style="vertical-align: top;">
     <th style="width: 25%;">Service Name</th>
