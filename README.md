@@ -91,61 +91,23 @@ This section outlines the core components of **VSP**, their current development 
 
 User-facing applications delivering the video streaming experience across web, mobile and smart TVs.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Web App</td>
-    <td>Provides the main user interface for desktop and laptop users, supporting media browsing, playback and account management.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Mobile App</td>
-    <td>Delivers the platform experience to iOS and Android users, including video playback, offline support and push notifications.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>TV App</td>
-    <td>Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Web App      | Provides the main user interface for desktop and laptop users, supporting media browsing, playback, and account management. | `Planned` |
+| Mobile App   | Delivers the platform experience to iOS and Android users, including video playback, offline support, and push notifications. | `Concept Only` |
+| TV App       | Designed for smart TVs and streaming devices, offering a lean-back experience optimised for large screens and remote controls. | `Concept Only` |
 
 
 ### Infrastructure Services
 
 Essential infrastructure services, including configuration management, service discovery and API routing.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Config Server</td>
-    <td>Manages externalised configuration for all services using Spring Cloud Config, enabling dynamic configuration updates and environment-specific settings.</td>
-    <td><a href="https://github.com/mzilin/vsp-infra-config">vsp-infra-config</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Discovery Service</td>
-    <td>Provides dynamic service registration and discovery using Spring Cloud Netflix Eureka, enabling microservices to locate and communicate with each other seamlessly.</td>
-    <td><a href="https://github.com/mzilin/vsp-infra-discovery">vsp-infra-discovery</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>API Gateway</td>
-    <td>Routes external client requests to the appropriate microservices using Spring Cloud Gateway, handling authentication, rate limiting and request aggregation.</td>
-    <td><a href="https://github.com/mzilin/vsp-infra-gateway">vsp-infra-gateway</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Chaos Monkey</td>
-    <td>Injects faults and simulates failures in services using Spring Cloud Chaos Monkey, helping to test the platform's resilience and fault tolerance.</td>
-    <td><code>Pending</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Config Server | Manages externalised configuration for all services using Spring Cloud Config, enabling dynamic configuration updates and environment-specific settings. | [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)   |
+| Discovery Service | Provides dynamic service registration and discovery using Spring Cloud Netflix Eureka, enabling microservices to locate and communicate with each other seamlessly. | [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery) |
+| API Gateway | Routes external client requests to the appropriate microservices using Spring Cloud Gateway, handling authentication, rate limiting, and request aggregation. | [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway) |
+| Chaos Monkey | Injects faults and simulates failures in services using Spring Cloud Chaos Monkey, helping to test the platform's resilience and fault tolerance. | `Pending`                                                        |
 
 
 ### Core Backend Services
@@ -157,28 +119,11 @@ The backend microservices that power the platform, grouped by functional cluster
 
 Manages user authentication, session control and third-party login integrations.
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Identity Service</td>
-    <td>Handles user authentication, storing and verifying credentials securely.</td>
-    <td><a href="https://github.com/mzilin/vsp-auth-identity">vsp-auth-identity</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Session Service</td>
-    <td>Controls access and refresh tokens, including validation, rotation and token blacklisting.</td>
-    <td><a href="https://github.com/mzilin/vsp-auth-session">vsp-auth-session</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>OAuth2 Service</td>
-    <td>Supports third-party login integrations, managing linked identities.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Identity Service | Handles user authentication, storing and verifying credentials securely. | [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity) |
+| Session Service  | Controls access and refresh tokens, including validation, rotation and token blacklisting. | [vsp-auth-session](https://github.com/mzilin/vsp-auth-session) |
+| OAuth2 Service   | Supports third-party login integrations, managing linked identities. | `Concept Only` |
 
 
 #### Users Cluster
@@ -193,172 +138,48 @@ Handles user-related data such as account details, profiles, watchlists and devi
 | Devices | Tracks registered user devices and session history (e.g. IP, location, timestamps). | `Concept Only` |
 
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Account</td>
-    <td>Stores and manages core user account information.</td>
-    <td><a href="https://github.com/mzilin/vsp-users-account">vsp-users-account</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Profile</td>
-    <td>Manages user profiles, preferences and personalisation settings.</td>
-    <td><a href="https://github.com/mzilin/vsp-users-profile">vsp-users-profile</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Watchlist</td>
-    <td>Allows users to save and manage a list of shows and films to watch later.</td>
-    <td><code>Pending</code></td>
-  </tr>
-    <tr style="vertical-align: top;">
-    <td>Devices</td>
-    <td>Tracks registered user devices and session history (e.g. IP, location, timestamps).</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
-
-
 #### Media Cluster
 
 Manages media content, including uploads, transcoding, DRM and licensing.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Catalog</td>
-    <td>Stores metadata for all media, including titles, genres, trailers and cast details.</td>
-    <td><a href="https://github.com/mzilin/vsp-media-catalog">vsp-media-catalog</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Upload</td>
-    <td>Handles media uploads to S3 for further processing and storage.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Transcoder</td>
-    <td>Converts media into different formats for streaming.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>DRM (Digital Rights Management)</td>
-    <td>Protects content with encryption and controls playback rights.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Geo-Restrictions Manager</td>
-    <td>Restricts content availability based on geographic location.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Content Moderation</td>
-    <td>Ensures uploaded content meets community and legal standards.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Release Scheduler</td>
-    <td>Controls when content is published and for how long it's available.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Licensing Service</td>
-    <td>Manages content licensing agreements and rights.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Catalog | Stores metadata for all media, including titles, genres, trailers, and cast details. | [vsp-media-catalog](https://github.com/mzilin/vsp-media-catalog) |
+| Upload | Handles media uploads to S3 for further processing and storage. | `Planned` |
+| Transcoder | Converts media into different formats for streaming. | `Planned` |
+| DRM (Digital Rights Management) | Protects content with encryption and controls playback rights. | `Concept Only` |
+| Geo-Restrictions Manager | Restricts content availability based on geographic location. | `Concept Only` |
+| Content Moderation | Ensures uploaded content meets community and legal standards. | `Concept Only` |
+| Release Scheduler | Controls when content is published and for how long it's available. | `Concept Only` |
+| Licensing Service | Manages content licensing agreements and rights. | `Concept Only` |
 
 
 #### Streaming Cluster
 
 Delivers streaming services, including content delivery, playback management and CDN integration.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Delivery</td>
-    <td>Streams content to users using a CDN for high performance and scale.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Playback Context</td>
-    <td>Builds real-time playback sessions, including entitlements and resume data.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Rights Manager</td>
-    <td>Validates user permissions for content based on subscriptions, geo and device.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Watch History</td>
-    <td>Stores user watch history, timestamps and resume points.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>CDN Orchestrator</td>
-    <td>Selects the best CDN edge node for each user, integrating with Open Connect.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Live</td>
-    <td>Handles live streaming events and real-time playback.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Ad Inserter</td>
-    <td>Injects or signals ad content into live or on-demand streams.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Offline Manager</td>
-    <td>Manages downloads, licenses and expiry for offline viewing.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Delivery | Streams content to users using a CDN for high performance and scale. | `Planned` |
+| Playback Context | Builds real-time playback sessions, including entitlements and resume data. | `Planned` |
+| Rights Manager | Validates user permissions for content based on subscriptions, geo, and device. | `Concept Only` |
+| Watch History | Stores user watch history, timestamps, and resume points. | `Planned` |
+| CDN Orchestrator | Selects the best CDN edge node for each user, integrating with Open Connect. | `Concept Only` |
+| Live | Handles live streaming events and real-time playback. | `Concept Only` |
+| Ad Inserter | Injects or signals ad content into live or on-demand streams. | `Concept Only` |
+| Offline Manager | Manages downloads, licenses, and expiry for offline viewing. | `Concept Only` |
 
 
 #### Discovery Cluster
 
 Provides search and discovery features, including search indexing, autocomplete and homepage content curation.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Search</td>
-    <td>Provides full-text and filtered search on media catalogues.</td>
-    <td><a href="https://github.com/mzilin/vsp-discovery-search">vsp-discovery-search</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Autocomplete</td>
-    <td>Suggests search terms and titles as users type.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Homepage Engine</td>
-    <td>Builds personalised content rows for users by combining recommendations, trending titles and viewing history.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Catalogue Indexer</td>
-    <td>Keeps Elasticsearch in sync with the media catalogue for fast search results.</td>
-    <td><code>Planned</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Search | Provides full-text and filtered search on media catalogues. | [vsp-discovery-search](https://github.com/mzilin/vsp-discovery-search) |
+| Autocomplete | Suggests search terms and titles as users type. | `Pending` |
+| Homepage Engine | Builds personalised content rows for users by combining recommendations, trending titles, and viewing history. | `Pending` |
+| Catalogue Indexer | Keeps Elasticsearch in sync with the media catalogue for fast search results. | `Planned` |
 
 
 ### Supporting Backend Services
@@ -370,190 +191,65 @@ Provides key platform enhancements such as user engagement, recommendations, com
 
 Drives user interaction with recommendations, trending content, A/B testing and advertising.
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Recommender</td>
-    <td>Uses machine learning to suggest content based on user behaviour and history.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Trending</td>
-    <td>Identifies and displays currently popular shows and films.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>A/B Testing</td>
-    <td>Runs experiments to test new features and content layouts.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Ads</td>
-    <td>Manages ad campaigns, targeting, scheduling and selection for live streams.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Recommender | Uses machine learning to suggest content based on user behaviour and history. | `Pending` |
+| Trending | Identifies and displays currently popular shows and films. | `Pending` |
+| A/B Testing | Runs experiments to test new features and content layouts. | `Concept Only` |
+| Ads | Manages ad campaigns, targeting, scheduling, and selection for live streams. | `Concept Only` |
 
 
 #### Comms Cluster
 
 Manages user communication via email, push notifications, in-app messages and user preferences.
 
-<table style="width: 100%">
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Notification Orchestrator</td>
-    <td>Routes and schedules messages across multiple channels.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Email</td>
-    <td>Sends transactional and marketing emails.</td>
-    <td><a href="https://github.com/mzilin/vsp-comms-email">vsp-comms-email</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Push (Apps)</td>
-    <td>Sends push notifications to mobile devices.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>In-App (Websockets)</td>
-    <td>Delivers real-time messages within web and mobile apps via WebSockets.</td>
-    <td><code>Planned</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>SMS</td>
-    <td>Sends text messages via telecom providers.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Templates</td>
-    <td>Manages message templates for consistent formatting.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Preferences</td>
-    <td>Handles user communication preferences and settings.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Notification Orchestrator  | Routes and schedules messages across multiple channels. | `Pending` |
+| Email | Sends transactional and marketing emails. | [vsp-comms-email](https://github.com/mzilin/vsp-comms-email) |
+| Push (Apps) | Sends push notifications to mobile devices. | `Concept Only` |
+| In-App (Websockets) | Delivers real-time messages within web and mobile apps via WebSockets. | `Planned` |
+| SMS | Sends text messages via telecom providers. | `Concept Only` |
+| Templates | Manages message templates for consistent formatting. | `Concept Only` |
+| Preferences | Handles user communication preferences and settings. | `Concept Only` |
 
 
 #### Billing Cluster
 
 Handles payments, subscriptions, refunds and financial reconciliation.
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Payments</td>
-    <td>Processes payments using Stripe/Checkout/etc.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Invoicing</td>
-    <td>Generates and stores user invoices.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Subscriptions</td>
-    <td>Manages plans, renewals and subscription statuses.</td>
-    <td><code>Pending</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Refunds</td>
-    <td>Processes user refund requests and tracks their status.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Disputes</td>
-    <td>Handles chargebacks and interactions with payment providers.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Reconciliation</td>
-    <td>Compares internal records with provider statements to identify mismatches.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Payments | Processes payments using Stripe/Checkout/etc. | `Pending` |
+| Invoicing | Generates and stores user invoices. | `Concept Only` |
+| Subscriptions | Manages plans, renewals, and subscription statuses. | `Pending` |
+| Refunds | Processes user refund requests and tracks their status. | `Concept Only` |
+| Disputes | Handles chargebacks and interactions with payment providers. | `Concept Only` |
+| Reconciliation | Compares internal records with provider statements to identify mismatches. | `Concept Only` |
 
 
 #### Analytics Cluster
 
 Enables platform insights by collecting, analysing, and reporting data on content and user behaviour.
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Event Collector</td>
-    <td>Ingests and batches user and system events.</td>
-    <td>Concept Only</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Reporting</td>
-    <td>Generates dashboards and usage statistics.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Content Performance</td>
-    <td>Tracks views, engagement and popularity of titles.</td>
-    <td>Concept Only</a></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>User Behaviour</td>
-    <td>Stores behaviour data for analysis and machine learning.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Anomaly Detector</td>
-    <td>Detects spikes, drops or odd patterns in metrics in real-time.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Data Quality Validator</td>
-    <td>Monitors pipelines for broken schemas and missing data.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Ad Metrics</td>
-    <td>Tracks ad impressions, durations, aggregates revenue/performance data.</td>
-    <td><code>Concept Only</code></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Event Collector | Ingests and batches user and system events. | `Concept Only` |
+| Reporting | Generates dashboards and usage statistics. | `Concept Only` |
+| Content Performance | Tracks views, engagement, and popularity of titles. | `Concept Only` |
+| User Behaviour | Stores behaviour data for analysis and machine learning. | `Concept Only` |
+| Anomaly Detector | Detects spikes, drops, or odd patterns in metrics in real-time. | `Concept Only` |
+| Data Quality Validator | Monitors pipelines for broken schemas and missing data. | `Concept Only` |
+| Ad Metrics | Tracks ad impressions, durations, and aggregates revenue/performance data. | `Concept Only` |
 
 
 #### Support Cluster
 
 Manages customer support, including ticketing and helpdesk integrations.
 
-<table style="width: 100%" >
-  <tr style="vertical-align: top;">
-    <th style="width: 25%;">Service Name</th>
-    <th style="width: 50%;">Description</th>
-    <th style="width: 25%;">Repository / Status</th>
-  </tr>
-  <tr style="vertical-align: top;">
-    <td>Ticketing</td>
-    <td>Handles customer support tickets and related workflows.</td>
-    <td>Concept Only</a></td>
-  </tr>
-</table>
+| Service Name | Description | Repository / Status |
+|--------------|-------------|---------------------|
+| Ticketing | Handles customer support tickets and related workflows. | `Concept Only`|
 
 
 ## Technology Stack
