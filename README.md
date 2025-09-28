@@ -1,4 +1,4 @@
-# Video Streaming Platform (VSP)
+# Streamix Video Streaming Platform
 
 ![Java](https://img.shields.io/badge/Java-21-007396?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.5-6DB33F?logo=springboot&logoColor=white)
@@ -7,7 +7,7 @@
 ![Status](https://img.shields.io/badge/status-in_progress-F5C910?label=Status)
 
 
-This repository serves as the **central hub** for the **Video Streaming Platform (VSP)**, a cloud-native, microservices-based application designed to deliver a scalable, reliable and high-performance video streaming experience.
+This repository serves as the **central hub** for **Streamix**, a cloud-native, microservices-based application designed to deliver a scalable, reliable and high-performance video streaming experience.
 
 It provides an overview of the system architecture and links to all individual microservices, acting as the single entry point for developers, maintainers and reviewers.
 
@@ -45,7 +45,7 @@ It provides an overview of the system architecture and links to all individual m
 
 ## Introduction
 
-The **Video Streaming Platform** is a modern, cloud-native solution that leverages a microservices architecture to deliver a scalable and high-performance streaming experience. Designed for flexibility and resilience, it divides key functionalities into dedicated services, including user management, media catalog, streaming, search, recommendations, authentication and more.
+The **Streamix** is a modern, cloud-native solution that leverages a microservices architecture to deliver a scalable and high-performance streaming experience. Designed for flexibility and resilience, it divides key functionalities into dedicated services, including user management, media catalog, streaming, search, recommendations, authentication and more.
 
 Key features of the platform include:
 - **Microservices-based architecture**: Each core function is implemented as an independent service, promoting modularity, maintainability and scalability.
@@ -63,7 +63,7 @@ The platform is built on a modern, cloud-native architecture that divides key pl
 The high-level architecture diagram below illustrates how frontend clients interact with the platform's core infrastructure and service clusters. Each cluster contains independent microservices with their own dedicated databases, ensuring data consistency and service autonomy.
 
 <p align="center">
-  <img src="diagrams/architecture-diagram.png" alt="VSP High-Level Architecture" style="max-width: 800px; width: 100%; height: auto;"/>
+  <img src="diagrams/architecture-diagram.png" alt="Streamix High-Level Architecture" style="max-width: 800px; width: 100%; height: auto;"/>
 </p>
 
 At the heart of the architecture is the **API Gateway**, which serves as the single entry point for all client requests. It provides routing, authentication, rate-limiting and request aggregation, simplifying client interactions while abstracting the complexity of the underlying microservices.
@@ -110,7 +110,7 @@ The following services are currently implemented and actively maintained. They a
 
 ## Platform Services Overview
 
-This section outlines all core components of **Video Streaming Platform**, including their current development statuses, descriptions and links to individual repositories.
+This section outlines all core components of **Streamix**, including their current development statuses, descriptions and links to individual repositories.
 
 Services are labelled with one of the following statuses:
 
