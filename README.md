@@ -77,34 +77,34 @@ Centralised configuration management is provided via **Spring Cloud Config**, en
 
 The following services are currently implemented and actively maintained. They are also listed in the [Platform Services Overview](#platform-services-overview) section below, where each service is grouped under its relevant cluster for more detailed context:
 
-- **Config Server** → [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)  
+- **Config Server** → [streamix-infra-config](https://github.com/mzilin/streamix-infra-config)  
   Manages externalised configuration using Spring Cloud Config.
 
-- **Discovery Service** → [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery)  
+- **Discovery Service** → [streamix-infra-discovery](https://github.com/mzilin/streamix-infra-discovery)  
   Provides service registration and discovery with Eureka.
 
-- **API Gateway** → [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway)  
+- **API Gateway** → [streamix-infra-gateway](https://github.com/mzilin/streamix-infra-gateway)  
   Routes external requests to backend services, managing authentication, rate limiting, and aggregation.
 
-- **Identity Service** → [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity)  
+- **Identity Service** → [streamix-auth-identity](https://github.com/mzilin/streamix-auth-identity)  
   Handles user authentication and credential management.
 
-- **Session Service** → [vsp-auth-session](https://github.com/mzilin/vsp-auth-session)  
+- **Session Service** → [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)  
   Manages access and refresh tokens, including validation and rotation.
 
-- **Account Service** → [vsp-users-account](https://github.com/mzilin/vsp-users-account)  
+- **Account Service** → [streamix-users-account](https://github.com/mzilin/streamix-users-account)  
   Stores and manages user account details.
 
-- **Profile Service** → [vsp-users-profile](https://github.com/mzilin/vsp-users-profile)  
+- **Profile Service** → [streamix-users-profile](https://github.com/mzilin/streamix-users-profile)  
   Manages user preferences and personalisation.
 
-- **Catalog Service** → [vsp-media-catalog](https://github.com/mzilin/vsp-media-catalog)  
+- **Catalog Service** → [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)  
   Stores metadata for media content, including titles and cast.
 
-- **Search Service** → [vsp-discovery-search](https://github.com/mzilin/vsp-discovery-search)  
+- **Search Service** → [streamix-discovery-search](https://github.com/mzilin/streamix-discovery-search)  
   Provides full-text and filtered search across media.
 
-- **Email Service** → [vsp-comms-email](https://github.com/mzilin/vsp-comms-email)  
+- **Email Service** → [streamix-comms-email](https://github.com/mzilin/streamix-comms-email)  
   Sends transactional and marketing emails.
 
 
@@ -140,15 +140,15 @@ User-facing applications delivering the video streaming experience across web, m
 
 Core infrastructure components that support all other services, including configuration management, service discovery and API routing.
 
-- **Config Server** - [vsp-infra-config](https://github.com/mzilin/vsp-infra-config)
+- **Config Server** - [streamix-infra-config](https://github.com/mzilin/streamix-infra-config)
     
     Manages externalised configuration for all services using Spring Cloud Config, enabling dynamic configuration updates and environment-specific settings.
 
-- **Discovery Service** - [vsp-infra-discovery](https://github.com/mzilin/vsp-infra-discovery)
+- **Discovery Service** - [streamix-infra-discovery](https://github.com/mzilin/streamix-infra-discovery)
 
     Provides dynamic service registration and discovery using Spring Cloud Netflix Eureka, allowing microservices to locate and communicate with each other seamlessly.
 
-- **API Gateway** - [vsp-infra-gateway](https://github.com/mzilin/vsp-infra-gateway)
+- **API Gateway** - [streamix-infra-gateway](https://github.com/mzilin/streamix-infra-gateway)
 
     Routes external client requests to the appropriate microservices using Spring Cloud Gateway, handling authentication, rate limiting and request aggregation.
 
@@ -161,11 +161,11 @@ Core infrastructure components that support all other services, including config
 
 Manages user authentication, session management and third-party login integrations.
 
-- **Identity Service** - [vsp-auth-identity](https://github.com/mzilin/vsp-auth-identity)
+- **Identity Service** - [streamix-auth-identity](https://github.com/mzilin/streamix-auth-identity)
 
     Handles user authentication, storing and verifying credentials securely.
 
-- **Session Service** - [vsp-auth-session](https://github.com/mzilin/vsp-auth-session)
+- **Session Service** - [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)
 
     Controls access and refresh tokens, including validation, rotation and token blacklisting.
 
@@ -178,11 +178,11 @@ Manages user authentication, session management and third-party login integratio
 
 Handles user-related data such as account details, profiles, watchlists and device management.
 
-- **Account Service** - [vsp-users-account](https://github.com/mzilin/vsp-users-account)
+- **Account Service** - [streamix-users-account](https://github.com/mzilin/streamix-users-account)
 
     Stores and manages core user account information.
 
-- **Profile Service** - [vsp-users-profile](https://github.com/mzilin/vsp-users-profile)
+- **Profile Service** - [streamix-users-profile](https://github.com/mzilin/streamix-users-profile)
 
     Manages user profiles, preferences and personalisation settings.
 
@@ -199,7 +199,7 @@ Handles user-related data such as account details, profiles, watchlists and devi
 
 Manages all aspects of media management, including uploads, transcoding, DRM and licensing.
 
-- **Catalog Service** - [vsp-media-catalog](https://github.com/mzilin/vsp-media-catalog)
+- **Catalog Service** - [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)
 
     Stores metadata for all media, including titles, genres, trailers, and cast information.
 
@@ -273,7 +273,7 @@ Delivers streaming services, including content delivery, playback management and
 
 Provides search and discovery features, including search indexing, autocomplete and homepage content curation.
 
-- **Search Service** - [vsp-discovery-search](https://github.com/mzilin/vsp-discovery-search)
+- **Search Service** - [streamix-discovery-search](https://github.com/mzilin/streamix-discovery-search)
 
     Enables full-text and filtered searches across the media catalogue.
 
@@ -319,7 +319,7 @@ Manages user communication via email, push notifications, in-app messaging and u
 
     Handles routing and scheduling of messages across multiple channels.
 
-- **Email Service** - [vsp-comms-email](https://github.com/mzilin/vsp-comms-email)
+- **Email Service** - [streamix-comms-email](https://github.com/mzilin/streamix-comms-email)
 
     Sends transactional and marketing emails to users.
 
