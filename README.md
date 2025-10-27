@@ -87,7 +87,8 @@ The following services are currently implemented and actively maintained. They a
   Routes external requests to backend services, managing authentication, rate limiting, and aggregation.
 
 - **Identity Service** → [streamix-auth-identity](https://github.com/mzilin/streamix-auth-identity)  
-  Handles user authentication and credential management.
+  Handles user authentication, credential management, and manages access and refresh tokens, including their validation and rotation.
+  <!-- Handles user authentication and credential management. -->
 
 <!-- - **Session Service** → [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)  
   Manages access and refresh tokens, including validation and rotation. -->
