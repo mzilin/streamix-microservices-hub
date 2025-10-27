@@ -89,8 +89,8 @@ The following services are currently implemented and actively maintained. They a
 - **Identity Service** → [streamix-auth-identity](https://github.com/mzilin/streamix-auth-identity)  
   Handles user authentication and credential management.
 
-- **Session Service** → [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)  
-  Manages access and refresh tokens, including validation and rotation.
+<!-- - **Session Service** → [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)  
+  Manages access and refresh tokens, including validation and rotation. -->
 
 - **Account Service** → [streamix-users-account](https://github.com/mzilin/streamix-users-account)  
   Stores and manages user account details.
@@ -165,7 +165,7 @@ Manages user authentication, session management and third-party login integratio
 
     Handles user authentication, storing and verifying credentials securely.
 
-- **Session Service** - [streamix-auth-session](https://github.com/mzilin/streamix-auth-session)
+- **Session Service** - `Planned`
 
     Controls access and refresh tokens, including validation, rotation and token blacklisting.
 
