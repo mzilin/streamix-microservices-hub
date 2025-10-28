@@ -99,11 +99,17 @@ The following services are currently implemented and actively maintained. They a
 - **Profile Service** → [streamix-users-profile](https://github.com/mzilin/streamix-users-profile)  
   Manages user preferences and personalisation.
 
-- **Catalog Service** → [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)  
-  Stores metadata for media content, including titles and cast.
+<!-- - **Catalog Service** → [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)  
+  Stores metadata for media content, including titles and cast. -->
 
-- **Search Service** → [streamix-discovery-search](https://github.com/mzilin/streamix-discovery-search)  
-  Provides full-text and filtered search across media.
+<!-- - **Upload Service** → [streamix-media-upload](https://github.com/mzilin/streamix-media-upload)  
+  Handles media uploads to S3 for further processing and storage. -->
+
+<!-- - **Transcoder Service** → [streamix-media-transcoder](https://github.com/mzilin/streamix-media-transcoder)  
+  Converts uploaded media into various streaming formats to ensure compatibility across devices. -->
+
+<!-- - **Search Service** → [streamix-discovery-search](https://github.com/mzilin/streamix-discovery-search)  
+  Provides full-text and filtered search across media. -->
 
 - **Email Service** → [streamix-comms-email](https://github.com/mzilin/streamix-comms-email)  
   Sends transactional and marketing emails.
@@ -200,7 +206,7 @@ Handles user-related data such as account details, profiles, watchlists and devi
 
 Manages all aspects of media management, including uploads, transcoding, DRM and licensing.
 
-- **Catalog Service** - [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)
+- **Catalog Service** - `Planned`
 
     Stores metadata for all media, including titles, genres, trailers, and cast information.
 
@@ -208,7 +214,7 @@ Manages all aspects of media management, including uploads, transcoding, DRM and
 
     Handles media uploads to S3 for further processing and storage.
 
-- **Transcoding Service** - `Planned`
+- **Transcoder Service** - `Planned`
 
     Converts uploaded media into various streaming formats to ensure compatibility across devices.
 
@@ -274,7 +280,7 @@ Delivers streaming services, including content delivery, playback management and
 
 Provides search and discovery features, including search indexing, autocomplete and homepage content curation.
 
-- **Search Service** - [streamix-discovery-search](https://github.com/mzilin/streamix-discovery-search)
+- **Search Service** - `Planned`
 
     Enables full-text and filtered searches across the media catalogue.
 
