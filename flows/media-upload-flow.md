@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
   autonumber
   participant Admin Tool (SPA)
@@ -34,3 +35,4 @@ sequenceDiagram
 
   SNS/SQS-->>Indexer: Trigger on media.published event
   Indexer-->>Indexer: Index content in Elasticsearch DB
+```
