@@ -99,11 +99,8 @@ The following services are currently implemented and actively maintained. They a
 - **Profile Service** → [streamix-users-profile](https://github.com/mzilin/streamix-users-profile)  
   Manages user preferences and personalisation.
 
-<!-- - **Catalog Service** → [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)  
-  Stores metadata for media content, including titles and cast. -->
-
-<!-- - **Upload Service** → [streamix-media-upload](https://github.com/mzilin/streamix-media-upload)  
-  Handles media uploads to S3 for further processing and storage. -->
+- **Catalog Service** → [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)  
+  Stores metadata for media content, including titles and cast, and manages secure media uploads.
 
 <!-- - **Transcoder Service** → [streamix-media-transcoder](https://github.com/mzilin/streamix-media-transcoder)  
   Converts uploaded media into various streaming formats to ensure compatibility across devices. -->
@@ -206,13 +203,9 @@ Handles user-related data such as account details, profiles, watchlists and devi
 
 Manages all aspects of media management, including uploads, transcoding, DRM and licensing.
 
-- **Catalog Service** - `Planned`
+- **Catalog Service** - [streamix-media-catalog](https://github.com/mzilin/streamix-media-catalog)
 
-    Stores metadata for all media, including titles, genres, trailers, and cast information.
-
-- **Upload Service** - `Planned`
-
-    Handles media uploads to S3 for further processing and storage.
+    Stores metadata for all media, including titles, genres, trailers, and cast information, and manages secure media uploads.
 
 - **Transcoder Service** - `Planned`
 
