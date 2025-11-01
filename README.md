@@ -17,6 +17,8 @@ It provides an overview of the system architecture and links to all individual m
 * [Introduction](#introduction)
 * [High-Level Architecture](#high-level-architecture)
 * [Service Flow Diagrams](#service-flow-diagrams)
+  * [Registration Flow](#registration-flow)
+  * [Authentication Flow](#authentication-flow)
   * [Media Upload Flow](#media-upload-flow)
   * [Streaming Flow](#streaming-flow)
 * [Implemented Services](#implemented-services)
@@ -79,6 +81,93 @@ Centralised configuration management is provided via **Spring Cloud Config**, en
 ## Service Flow Diagrams
 
 This section presents clear, high-level flow diagrams for the platform's core clusters, including `Auth`, `Media`, and `Streaming`. These diagrams illustrate key service interactions within each domain.
+
+
+### Registration Flow
+
+Describes how new user accounts are created, covering the roles of the Account, Identity, Profile and Email services in onboarding users before their first login.
+
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant Client (SPA)
+  participant Account Service
+  participant Identity Service
+  participant Profile Service
+  participant Email Service
+  participant PostgreSQL (Account)
+  participant PostgreSQL (Identity)
+  participant PostgreSQL (Profile)
+
+  Client (SPA)->>Account Service: Submit signup details
+  Account Service->>PostgreSQL (Account): Create user account
+  PostgreSQL (Account)-->>Account Service: Account created
+
+  Account Service--)Identity Service: Create user credentials (async)
+  Identity Service->>PostgreSQL (Identity): Store credentials
+  PostgreSQL (Identity)-->>Identity Service: Credentials stored
+
+  Identity Service--)Email Service: Send verification email (async)
+
+  Account Service--)Profile Service: Create default profile(s) (async)
+  Profile Service->>PostgreSQL (Profile): Insert default profile(s)
+  PostgreSQL (Profile)-->>Profile Service: Profile(s) created
+
+  Account Service-->>Client (SPA): Signup initiated (next: verify email & login)
+```
+
+### Authentication Flow
+
+It details how user credentials are securely verified, how access and refresh tokens are generated and rotated, and how user sessions are managed to ensure safe, seamless access to the platform's services.
+
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant Client (SPA)
+  participant Identity Service
+  participant Session Service
+  participant PostgreSQL
+  participant Redis
+
+  %% User login
+  Client (SPA)->>Identity Service: Submit credentials
+  Identity Service->>PostgreSQL: Validate user credentials
+  PostgreSQL-->>Identity Service: User record / result
+  alt Credentials valid
+    Identity Service->>Session Service: Issue tokens (user_id)
+    Session Service->>Redis: Store session, set TTL
+    Session Service-->>Identity Service: Access & refresh token
+    Identity Service-->>Client (SPA): Return tokens
+  else Credentials invalid
+    Identity Service-->>Client (SPA): Error (401)
+  end
+
+  %% Accessing protected resource (every API call)
+  Client (SPA)->>Session Service: Send access token
+  Session Service->>Redis: Validate token, check expiry/blacklist
+  alt Valid
+    Session Service-->>Client (SPA): Allow access
+  else Invalid/Expired
+    Session Service-->>Client (SPA): 401/redirect to login
+  end
+
+  %% Token refresh flow
+  Client (SPA)->>Session Service: Send refresh token
+  Session Service->>Redis: Check/blacklist old refresh token
+  alt Valid refresh
+    Session Service->>Redis: Rotate & store new refresh token, set TTL
+    Session Service-->>Client (SPA): New access & refresh token
+  else Blacklisted/expired
+    Session Service-->>Client (SPA): 401/redirect to login
+  end
+
+  %% Logout
+  Client (SPA)->>Session Service: Logout (invalidate tokens)
+  Session Service->>Redis: Blacklist/invalidate tokens
+  Session Service-->>Client (SPA): Success
+```
 
 
 ### Media Upload Flow
