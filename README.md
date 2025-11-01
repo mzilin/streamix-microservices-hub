@@ -16,6 +16,9 @@ It provides an overview of the system architecture and links to all individual m
 
 * [Introduction](#introduction)
 * [High-Level Architecture](#high-level-architecture)
+* [Service Flow Diagrams](#service-flow-diagrams)
+  * [Media Upload Flow](#media-upload-flow)
+  * [Streaming Flow](#streaming-flow)
 * [Implemented Services](#implemented-services)
 * [Platform Services Overview](#platform-services-overview)
   * [Frontend Applications](#frontend-applications)
@@ -73,7 +76,97 @@ Microservices are organised into logical clusters based on their core responsibi
 Centralised configuration management is provided via **Spring Cloud Config**, enabling consistent, environment-specific configuration across all microservices. **Eureka** acts as the service registry, supporting dynamic service discovery and load balancing.
 
 
-### Implemented Services
+## Service Flow Diagrams
+
+This section presents clear, high-level flow diagrams for the platform's core clusters, including `Auth`, `Media`, and `Streaming`. These diagrams illustrate key service interactions within each domain.
+
+
+### Media Upload Flow
+
+Describes the end-to-end process for uploading new media assets to the platform by the admins, covering how files are ingested, processed, and stored by backend services.
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant Admin Tool (SPA)
+  participant Catalog Service
+  participant S3
+  participant SNS/SQS
+  participant Transcoder
+  participant Indexer
+
+  Admin Tool (SPA)-->>Catalog Service: Create Media Metadata
+  Catalog Service-->>Catalog Service: Generate media_id
+  Catalog Service-->>S3: Get Presigned Multipart Upload URLs
+  Catalog Service-->>Catalog Service: Save upload metadata
+  Catalog Service-->>Admin Tool (SPA): Return media_id & presigned URLs
+
+  par Parallel Upload
+    Admin Tool (SPA)-->>Admin Tool (SPA): Split file into parts
+    Admin Tool (SPA)-->>S3: Upload each part (with acceleration)
+  end
+
+  Admin Tool (SPA)-->>Catalog Service: Notify upload complete
+  Catalog Service-->>S3: Finalise Multipart Upload
+  Catalog Service-->>SNS/SQS: Publish media.uploaded event
+
+  SNS/SQS-->>Transcoder: Trigger on media.uploaded event
+  Transcoder-->>S3: Download uploaded media
+  Transcoder-->>Transcoder: Generate video variants (1080p, 720p, etc.)
+  Transcoder-->>SNS/SQS: Publish media.transcoded event
+
+  SNS/SQS-->>Catalog Service: Trigger on media.transcoded event
+  Catalog Service-->>Catalog Service: Update content with new video URLs and metadata
+  Catalog Service-->>Catalog Service: Mark content ready for discovery
+  Catalog Service-->>SNS/SQS: Publish media.published event
+
+  SNS/SQS-->>Indexer: Trigger on media.published event
+  Indexer-->>Indexer: Index content in Elasticsearch DB
+```
+
+
+### Streaming Flow
+
+Shows the typical flow for content playback, detailing how user requests are authenticated, playback is authorised and content is securely streamed via the CDN.
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant User
+  participant Client (SPA)
+  participant Auth Service
+  participant Playback Context
+  participant Rights Manager
+  participant DRM
+  participant CDN Orchestrator
+  participant CDN
+
+  User->>Client (SPA): Play
+  Client (SPA)->>Auth Service: Validate session
+  Auth Service-->>Client (SPA): Session OK
+  Client (SPA)->>Playback Context: Request playback
+  Playback Context->>Rights Manager: Check entitlements
+  Rights Manager-->>Playback Context: OK/Denied
+  Playback Context->>DRM: Get DRM token
+  DRM-->>Playback Context: DRM token
+  Playback Context->>CDN Orchestrator: Get CDN URL
+  CDN Orchestrator-->>Playback Context: CDN URL
+  Playback Context-->>Client (SPA): Playback Context config
+  Client (SPA)->>CDN: Stream request
+  CDN-->>Client (SPA): Stream video
+
+  loop Token expiry (every N minutes)
+    Client (SPA)->>Playback Context: Request new CDN token
+    Playback Context->>CDN Orchestrator: Get new CDN URL
+    CDN Orchestrator-->>Playback Context: New CDN URL
+    Playback Context-->>Client (SPA): New CDN token/URL
+    Client (SPA)->>CDN: Continue streaming with new token
+    CDN-->>Client (SPA): Continue streaming
+  end
+```
+
+
+## Implemented Services
 
 The following services are currently implemented and actively maintained. They are also listed in the [Platform Services Overview](#platform-services-overview) section below, where each service is grouped under its relevant cluster for more detailed context:
 
@@ -235,10 +328,6 @@ Manages all aspects of media management, including uploads, transcoding, DRM and
 ### Streaming Cluster
 
 Delivers streaming services, including content delivery, playback management and CDN integration.
-
-- **Delivery Service** - `Planned`
-
-    Streams content to users via CDN, ensuring high performance and scalability.
 
 - **Playback Context Service** - `Planned`
 
